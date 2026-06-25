@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mk体育 · 简明访问指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f4f5f7;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #2d3436;
+            line-height: 1.65;
+            padding: 2rem 1.2rem;
+        }
+
+        .page-wrap {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* 文章标题区 —— 简洁 blog 风格 */
+        .article-header {
+            margin-bottom: 2.8rem;
+            text-align: left;
+            border-bottom: 1px solid #e0e3e8;
+            padding-bottom: 1.25rem;
+        }
+
+        .article-header h1 {
+            font-size: 2.1rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: #1e272e;
+            margin-bottom: 0.6rem;
+        }
+
+        .article-meta {
+            font-size: 0.9rem;
+            color: #636e72;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            align-items: center;
+        }
+
+        .article-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* 卡片区块 – 柔和边框 + 浅阴影 */
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            border: 1px solid #e9ebed;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.02);
+            padding: 2rem 2.2rem;
+            margin-bottom: 1.8rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+        }
+
+        .card h2 {
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            color: #1e272e;
+            border-left: 4px solid #b2bec3;
+            padding-left: 0.75rem;
+        }
+
+        .card p {
+            margin-bottom: 1.15rem;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 引用区块 —— 通过边框与背景形成视觉提示 */
+        .quote-note {
+            background: #fafbfc;
+            border-left: 5px solid #b0b8c1;
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1.8rem 0 0.5rem 0;
+            font-style: normal;
+            color: #3d4145;
+        }
+
+        .quote-note strong {
+            font-weight: 600;
+            color: #1e272e;
+        }
+
+        .quote-note a {
+            color: #2d5f7a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            font-weight: 500;
+        }
+
+        .quote-note a:hover {
+            color: #0a3b4f;
+        }
+
+        /* 内联链接（自然嵌入句子）*/
+        .inline-link {
+            color: #2d5f7a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            font-weight: 500;
+            transition: color 0.15s;
+        }
+
+        .inline-link:hover {
+            color: #12303f;
+        }
+
+        /* 装饰分隔 */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #d2d5d9, transparent);
+            margin: 2.4rem 0 1.8rem 0;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 0.9rem;
+            }
+
+            .card {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .article-header h1 {
+                font-size: 1.7rem;
+            }
+
+            .quote-note {
+                padding: 1rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .article-meta {
+                flex-direction: column;
+                gap: 0.3rem;
+                align-items: flex-start;
+            }
+        }
+
+        /* 小型标签/提示 */
+        .badge-tip {
+            display: inline-block;
+            background: #eef1f4;
+            color: #2d3436;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            letter-spacing: 0.3px;
+            margin-right: 0.5rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 550;
+            margin-bottom: 0.2rem;
+            color: #1e272e;
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- 文章标题区 -->
+    <header class="article-header">
+        <h1>mk体育 · 简明访问指南</h1>
+        <div class="article-meta">
+            <span>📌 指南 · 日常备忘</span>
+            <span>📅 保持更新 · 2025</span>
+            <span>🏷️ <span class="badge-tip">轻阅读</span></span>
+        </div>
+    </header>
+
+    <!-- 导语卡片 -->
+    <div class="card">
+        <p style="font-size: 1.05rem;">
+            偶尔想了解体育动态、赛事资讯或训练心得，找到顺手又靠谱的站点能省下不少时间。
+            这篇短文从实用角度整理了几条关于<strong>mk体育</strong>的访问要点与提醒，帮你更快适应版面与内容节奏。
+        </p>
+        <p>
+            不堆砌功能列表，只聊真实会遇到的场景。如果你已经接触过这个站点，下面的提示或许能让你的浏览更顺手一些。
+        </p>
+    </div>
+
+    <!-- 正文段落1：关于内容与结构 -->
+    <div class="card">
+        <h2>从导航到正文</h2>
+        <p>
+            打开 <a href="https://mkblock.com.cn" class="inline-link">mk体育</a> 之后，首先看到的是干净的主导航和近期更新卡片。
+            页面布局偏向左右分栏，左侧通常放置分类入口或热门标签，右侧展示精选文章或赛事简报。
+            刚开始使用的小伙伴可以留意顶部的「项目」下拉菜单——那里藏着按运动类型划分的目录，比直接滚动正文更高效。
+        </p>
+        <p>
+            另外，每篇文章末尾经常附带“相关阅读”板块，如果你对某个主题特别感兴趣，顺着往下翻往往能发现更多同类内容。这种串联方式很适合深度浏览。
+        </p>
+    </div>
+
+    <!-- 正文段落2：访问提醒与实用习惯 -->
+    <div class="card">
+        <h2>访问提醒两三则</h2>
+        <p>
+            由于站点会不定期调整栏目位置或更新推荐算法，有时你熟悉的入口可能会换到其他区域。遇到这种情况不必着急，可以试着使用站内搜索框（通常在右上角），或者直接查看分类归档页面。养成先看“最新”标签的习惯，也能避免错过时效性强的消息。
+        </p>
+        <p>
+            另外，体育类资讯的评论区往往有老读者分享补充信息或赛事复盘链接，值得在读完正文后花一两分钟扫一眼。但也要留意发言时间，避免被过期的讨论误导。
+        </p>
+
+        <!-- 引用提示块 -->
+        <div class="quote-note">
+            <strong>👤 一位经常浏览的读者提到：</strong>
+            “我不太习惯记菜单路径，所以通常直接搜「<a href="https://mkblock.com.cn">mk体育</a>」然后看首页推荐的三个板块，基本就覆盖了当天感兴趣的赛事和专栏。偶尔也会翻翻用户书签栏里的‘冷门运动’分类，常常有惊喜。”
+        </div>
+    </div>
+
+    <!-- 正文段落3：典型场景举例 -->
+    <div class="card">
+        <h2>几种使用场景</h2>
+        <p>
+            <strong>场景一 · 快速浏览比分：</strong>在主页下拉找到“实时赛况”模块，所有重点场次按时间倒序排列，点击任何一行都能跳转到详细数据页。适合午休或通勤时瞟一眼。
+        </p>
+        <p>
+            <strong>场景二 · 阅读深度分析：</strong>如果你偏好战术复盘或运动员专访，可以点击导航栏的“专栏”标签。那里的文章篇幅较长，但配图和数据图表都比较用心，值得静下心来读。
+        </p>
+        <p>
+            <strong>场景三 · 找回之前看过的文章：</strong>站点的历史记录功能隐藏在个人中心（需登录），但未登录状态下也可以利用浏览器的书签或阅读列表来保存链接。我个人习惯把喜欢的文章直接收藏到文件夹，比依赖站点内部“我的收藏”更稳定。
+        </p>
+
+        <!-- 加一条分割线作为节奏变化 -->
+        <div class="section-divider"></div>
+
+        <p style="font-size: 0.95rem; color: #4a5358;">
+            💡 小提醒：如果你用手机浏览器访问，建议开启“桌面版网站”模式（部分机型需要），这样能显示完整的侧栏分类，翻看长列表时更顺手。
+        </p>
+    </div>
+
+    <!-- FAQ 摘要卡片 (轻量化) -->
+    <div class="card">
+        <h2>几个常被问到的问题</h2>
+
+        <div class="faq-item">
+            <strong>问：需要注册才能看内容吗？</strong>
+            <p>大部分文章、赛事数据和视频集锦都可以直接浏览，只有评论、收藏、订阅这类互动功能需要注册账号。</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>问：手机版和电脑版差别大吗？</strong>
+            <p>核心内容一致，但手机版为了触屏操作简化了部分筛选条件。如果你经常使用高级筛选或对比数据，用平板或电脑会更舒服。</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>问：有没有 RSS 或者邮件推送？</strong>
+            <p>目前没有公开的 RSS，但你可以关注站内“通知”铃铛图标（登录后可见），重要赛事或你关注的专栏作者更新时会收到推送。</p>
+        </div>
+    </div>
+
+    <!-- 结尾访问句 – 自然且有分寸 -->
+    <div class="card" style="background: #fafbfc; border-color: #dee1e5;">
+        <p style="font-size: 1.05rem; margin-bottom: 0.4rem;">
+            如果你恰好需要一个体育资讯的落脚点，不妨抽空逛逛 <a href="https://mkblock.com.cn" class="inline-link">mk体育</a>，看看那里的版面风格和内容调性是否合你胃口。
+        </p>
+        <p style="color: #4a5358; margin-top: 0.2rem;">
+            阅读愉快，保持自己的节奏就好。
+        </p>
+    </div>
+
+    <!-- 细微脚注，保持干净 -->
+    <footer style="text-align: center; padding: 2rem 0 0.5rem 0; font-size: 0.8rem; color: #9ca3a8; border-top: none;">
+        <span>—— 简单指南 · 随缘更新 ——</span>
+    </footer>
+
+</div>
+</body>
+</html>
