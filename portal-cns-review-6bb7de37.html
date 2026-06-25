@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>信息索引 · 麻将胡了 资料整理手记</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f9fc;
+            color: #1c2a38;
+            line-height: 1.7;
+            padding: 1.5rem 1rem 3rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page-wrapper {
+            max-width: 820px;
+            width: 100%;
+        }
+
+        /* 网格卡片背景装饰（极淡） */
+        .page-wrapper {
+            background-image:
+                linear-gradient(rgba(0, 160, 136, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 160, 136, 0.04) 1px, transparent 1px);
+            background-size: 48px 48px;
+            background-position: -1px -1px;
+            padding: 0.5rem;
+            border-radius: 24px;
+        }
+
+        /* 主文章卡片 */
+        .article-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(2px);
+            border-radius: 32px;
+            padding: 2rem 1.8rem 2.6rem;
+            box-shadow: 0 6px 28px rgba(0, 60, 55, 0.06), 0 2px 6px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0, 160, 136, 0.15);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #0b2b28;
+            margin-bottom: 0.25rem;
+            line-height: 1.2;
+            position: relative;
+        }
+
+        h1 small {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #3a6b62;
+            letter-spacing: 0.3px;
+            margin-top: 0.2rem;
+        }
+
+        .lead {
+            font-size: 1.15rem;
+            color: #1f4b42;
+            background: #dff3ef;
+            padding: 1rem 1.2rem;
+            border-radius: 20px;
+            margin: 1.4rem 0 1.8rem;
+            border-left: 5px solid #119982;
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #0f3d36;
+            margin: 2rem 0 0.8rem;
+            border-bottom: 2px solid #b8ded6;
+            padding-bottom: 0.4rem;
+            letter-spacing: 0.3px;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #156b5b;
+            margin: 1.6rem 0 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: #1d2f2b;
+        }
+
+        a {
+            color: #008b74;
+            text-decoration: none;
+            border-bottom: 1.5px dotted #7fc7b9;
+            transition: border-color 0.2s, color 0.2s;
+            font-weight: 500;
+        }
+
+        a:hover,
+        a:focus {
+            color: #005f50;
+            border-bottom-style: solid;
+            border-color: #005f50;
+        }
+
+        /* 引用提示框 */
+        .insight-box {
+            background: #e3f3ef;
+            border-radius: 24px;
+            padding: 1.5rem 1.6rem;
+            margin: 2rem 0 1.4rem;
+            border: 1px solid #9fd0c4;
+            box-shadow: 0 2px 8px rgba(0, 110, 85, 0.05);
+            font-style: normal;
+        }
+
+        .insight-box strong {
+            color: #0b584a;
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+        }
+
+        .insight-box p {
+            margin-bottom: 0.2rem;
+        }
+
+        .insight-box a {
+            border-bottom: 1.5px solid #008b74;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.8rem 0 1.2rem;
+        }
+
+        .mini-card {
+            background: #f6fcfb;
+            border: 1px solid #cde3dd;
+            border-radius: 22px;
+            padding: 1rem 1.2rem 1.1rem;
+            transition: box-shadow 0.2s, transform 0.1s;
+        }
+
+        .mini-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 120, 95, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .mini-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #0c4d41;
+            margin-bottom: 0.2rem;
+            letter-spacing: 0.2px;
+        }
+
+        .mini-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            color: #2e4d45;
+        }
+
+        .faq-summary {
+            background: #ffffffd9;
+            border-radius: 24px;
+            padding: 1.4rem 1.5rem;
+            margin: 1.8rem 0 1.2rem;
+            border: 1px solid #c2dcd3;
+        }
+
+        .faq-summary details {
+            margin-bottom: 0.6rem;
+            border-bottom: 1px solid #d6eae4;
+            padding-bottom: 0.5rem;
+        }
+
+        .faq-summary details:last-child {
+            border-bottom: none;
+        }
+
+        .faq-summary summary {
+            font-weight: 500;
+            color: #115a4b;
+            cursor: pointer;
+            padding: 0.3rem 0;
+            font-size: 1rem;
+        }
+
+        .faq-summary summary::marker {
+            color: #008b74;
+        }
+
+        .faq-summary p {
+            margin: 0.5rem 0 0.2rem 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .visit-tag {
+            display: inline-block;
+            margin-top: 0.2rem;
+            font-size: 0.9rem;
+            background: #dff3ef;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            color: #004d3d;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #b7d9d0;
+            margin: 2rem 0 1rem;
+            opacity: 0.4;
+        }
+
+        .footer-note {
+            text-align: center;
+            color: #3f6b61;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+            padding-top: 0.6rem;
+            border-top: 1px solid #bfdbd2;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.5rem 2.5rem;
+            }
+
+            .article-card {
+                padding: 1.5rem 1rem 2rem;
+                border-radius: 28px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .lead {
+                font-size: 1rem;
+                padding: 0.8rem 1rem;
+            }
+
+            .grid-cards {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+
+            .mini-card {
+                padding: 0.9rem 1rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .insight-box {
+                padding: 1.2rem 1.2rem;
+            }
+
+            .faq-summary {
+                padding: 1rem 1rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .article-card {
+                padding: 1.2rem 0.8rem 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <div class="article-card">
+
+        <h1>
+            麻将胡了 · 资料索引
+            <small>从规则梳理到信息聚合的笔记</small>
+        </h1>
+
+        <div class="lead">
+            整理不是目的，让信息可追溯、可交叉才是。本文围绕「<a href="https://portal-cns-mahjong.com">麻将胡了</a>」这一主题，将散落的参考线索、规则要点与常见疑问做一次结构化归档，方便后续查阅与补充。
+        </div>
+
+        <p>
+            在接触各类麻将变体的过程中，最耗费精力的往往不是玩法本身，而是资料分散、术语不统一。做索引的初衷就是搭建一个轻量节点：把规则说明、计番方式、平台入口等素材按逻辑归位。经过一段时间的收集，我决定以「麻将胡了」作为中心词来串联这些笔记条目，因为它恰好覆盖了从经典番种到在线对局的多个截面。
+        </p>
+
+        <h2>一、规则索引的切入点</h2>
+        <p>
+            一份好的规则索引应当包含几个基本层：基础牌型与胡牌门槛、番种定义与复合逻辑、以及常见争议判例。在整理过程中，我发现许多线上讨论其实都指向同一套核心框架——只是表述略有出入。因此我选择以 <a href="https://portal-cns-mahjong.com">麻将胡了</a> 作为锚点，把不同来源的规则说明映射到统一的术语表里，这样后续增补时就不容易产生歧义。
+        </p>
+        <p>
+            例如「门清自摸」与「不求人」在不同规则集里有时被视作同一番种，有时又分别计番。通过索引表格做对照后，再结合具体场景测试，就能很快厘清边界。
+        </p>
+
+        <h2>二、信息聚合的三种来源</h2>
+        <div class="grid-cards">
+            <div class="mini-card">
+                <h4>📄 规则文档</h4>
+                <p>地方麻将协会与线上平台公开的规则说明，版本较稳定，适合作为基准参考。</p>
+            </div>
+            <div class="mini-card">
+                <h4>💬 讨论记录</h4>
+                <p>论坛与社群中的判例讨论，虽然口语化，但常包含真实对局中遇到的边界情况。</p>
+            </div>
+            <div class="mini-card">
+                <h4>🔗 平台入口</h4>
+                <p>多个在线练习与对战平台的访问方式，其中 <a href="https://portal-cns-majong.com">麻将胡了</a> 是较综合的聚合页之一。</p>
+            </div>
+            <div class="mini-card">
+                <h4>📊 统计摘要</h4>
+                <p>部分玩家整理的番种出现频率与胡牌概率统计，对理解牌效有帮助但需注意样本偏差。</p>
+            </div>
+        </div>
+
+        <h2>三、场景化用途梳理</h2>
+        <p>
+            在实际使用中，索引的价值往往体现在不同场景下的快速定位。如果是新手学习，可以优先看基础牌型与简单番种；若为了参加线上比赛，则需要关注平台特有的规则变体与时间控制。而作为日常查阅工具，<a href="https://portal-cns-mahjong.com">麻将胡了</a> 所聚合的内容正好覆盖了从规则速查到番种一览的多个层级，省去了反复跳转的麻烦。
+        </p>
+        <p>
+            另外，我注意到不少玩家在拆解「复合番型」时容易遗漏隐含条件，比如「三同刻」与「三色同刻」虽然名字相似，但成立条件差异明显。借助索引做横向比对，就能提前避免误判。
+        </p>
+
+        <div class="insight-box">
+            <strong>💡 引用提示</strong>
+            <p>
+                整理过程中发现一个值得留意的现象：不同地区对「胡牌」的称呼差异（如「糊」「和」「胡」）往往对应着细微的规则区别。在索引条目里我统一用「胡」字，但在原始文档引用时会保留原用字。若要进行跨规则对比，建议先确认术语的定义域。
+            </p>
+        </div>
+
+        <h2>四、FAQ 摘要 · 选录</h2>
+        <div class="faq-summary">
+            <details>
+                <summary>什么是“麻将胡了”的核心索引范围？</summary>
+                <p>主要涵盖国标麻将、日本立直麻将的部分番种以及常见线上平台的规则摘要，不包括纯地方村规（如部分地区独有的花牌玩法）。</p>
+            </details>
+            <details>
+                <summary>如何判断一条规则信息是否可靠？</summary>
+                <p>优先参考平台官方文档或经多人验证的规则书；对于社群讨论，留意是否有实际牌谱或裁判判定作为支撑。</p>
+            </details>
+            <details>
+                <summary>索引会定期更新吗？</summary>
+                <p>是的，当发现新的规则变体或平台更新时会补充条目。页面版本通过文章末尾的日期标记区分。</p>
+            </details>
+            <details>
+                <summary>可以直接引用这里的整理内容吗？</summary>
+                <p>可以，但建议同时注明原始出处（如规则文档链接、讨论帖地址），以保证信息链完整。</p>
+            </details>
+        </div>
+
+        <hr>
+
+        <p>
+            目前这份索引还在持续补充中，下一阶段计划加入「番种复合概率参考」和「线上平台规则差异速查表」。如果你有想补充的条目或发现了需要修正的地方，欢迎通过相关渠道反馈。保持索引的准确性与可用性，是持续整理的意义所在。
+        </p>
+
+        <div class="footer-note">
+            <span>资料归档 · 索引版本 2025.04</span>
+            <span class="visit-tag">📌 聚合入口：<a href="https://portal-cns-mahjong.com">麻将胡了</a></span>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
